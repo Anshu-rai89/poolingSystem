@@ -10,10 +10,20 @@ You cannot delete a question  if one ofits option is voted
 # Api endPoints
 
 1 /questions/create
+
+
 2 /questions/:id/delete
+
+
 3 /questions/:id
+
+
 4 /questions/:id/options/create
+
+
 5 /options/:id/delete
+
+
 6 /options/:id/add_vote
 
 
