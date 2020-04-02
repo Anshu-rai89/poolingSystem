@@ -1,4 +1,3 @@
-# Round 1 
 
 # PoolingSystem
 
