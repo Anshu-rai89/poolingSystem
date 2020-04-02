@@ -1,13 +1,7 @@
 # Round 1 
 
-# CRUD APP For Products Using Express Mongo Node
+# Pooling Using Express Mongo Node
 
-# Api end POints 
-
-1 /products/create
-2 /products/:id
-3 /products
-4 .products/:id/update_quantity
 
 
 
