@@ -1,4 +1,5 @@
 const Question=require('../../../model/question');
+const Option=require('../../../model/option');
 
 
 module.exports.create=async function(req,res)
@@ -53,11 +54,17 @@ module.exports.deleteQuestion=async function(req,res)
 
                 else
                 {
-                    // deleting our question
+                    
+
+                     // deleting all options 
+                     console.log('deleting otions');
+                     await  Option.deleteMany({question:question._id});
+
+                   // deleting our question'
+                   console.log('deleting question');
                     question=await Question.findByIdAndDelete(req.params.id);
-                // deleting all options 
-                    console.log(question.option);
-                    await question.deleteMany({_id: {$in: question.option}});
+               
+                   
 
                     return res.json(200,
                         {
