@@ -65,8 +65,10 @@ module.exports.deleteOption=async function(req,res)
 {
 
     try{
-              let option=await Options.findById(req.params.id);
 
+        console.log('in delete option');
+              let option=await Options.findById(req.params.id);
+               console.log('option',option);
               if(option)
               { 
                   // checeking here if option have votes or not
