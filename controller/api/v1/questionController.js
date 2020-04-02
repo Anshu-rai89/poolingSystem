@@ -37,8 +37,7 @@ module.exports.deleteQuestion=async function(req,res)
     {
 
              let question=await Question.findById(req.params.id);
-
-             await Like.deleteMany({_id: {$in: question.option}});
+           
 
              if(question)
              {
@@ -56,7 +55,9 @@ module.exports.deleteQuestion=async function(req,res)
                 {
                     // deleting our question
                     question=await Question.findByIdAndDelete(req.params.id);
-                
+                // deleting all options 
+                    console.log(question.option);
+                    await question.deleteMany({_id: {$in: question.option}});
 
                     return res.json(200,
                         {
